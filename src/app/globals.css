@@ -4,3 +4,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* custom css */
+#category1, #category2 {
+    -webkit-appearance: none;  /* removes expand icon in older Chrome versions  */
+    -moz-appearance: none;     /* removes expand icon in older Firefox versions */
+    appearance: none;          /* removes expand icon                           */
+}
+
+#category1::-ms-expand,
+#category2::-ms-expand {           /* removes expand icon in IE10                   */
+    display: none;
+}
