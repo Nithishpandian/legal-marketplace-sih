@@ -1,5 +1,6 @@
 import Intro from '@/components/home/Intro'
 import LawyerCard from '@/components/home/LawyerCard'
+import { lawyerData } from '@/data/data'
 
 export default function Home() {
   return (
@@ -12,13 +13,20 @@ export default function Home() {
         </div>
       </div>
       <div className='grid grid-cols-3 gap-y-12 gap-x-1 py-5 px-12'>
-        <LawyerCard/>
-        <LawyerCard/>
-        <LawyerCard/>
-        <LawyerCard/>
-        <LawyerCard/>
-        <LawyerCard/>
-        <LawyerCard/>
+        {
+          lawyerData.map((data, index)=>{
+            return <LawyerCard
+            key={index}
+            image={data.image}
+            name={data.name}
+            rating={data.rating}
+            category={data.category}
+            location={data.location}
+            experience={data.experience}
+            />
+          })
+        }
+
       </div>
     </div>
   )
